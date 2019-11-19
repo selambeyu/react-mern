@@ -74,7 +74,16 @@ router.post('/login',(req,res)=>{
 
 
 router.get('/profile',verifyToken,(req,res)=>{
+    jwt.verify(req.token,"secret",(err,authData)=>{
+        if(err){
+            res.sendStatus(404);
+        }
+        res.json({
+            msg:"usr profile",
+            authData:authData
+    })
 
+})
 })
 
 
