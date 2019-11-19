@@ -1,6 +1,7 @@
 const express=require('express');
 const mongoose=require('mongoose');
-const bodyparser=require('body-parser')
+const bodyparser=require('body-parser');
+const passport=require('passport-jwt');
 const db=require('./config/config')
 const app=express();
 const userRouter=require('./routes/api/users');
@@ -21,6 +22,11 @@ db_connect=mongoose.connect(db.dbURL,{
 app.get('/',(req,res)=>{
     res.send('Hello, This is React');
 });
+// passport middleware
+// app.use(passport.ini);
+
+// passport config 
+require('./config/passport')
 
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
