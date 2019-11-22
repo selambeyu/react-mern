@@ -6,7 +6,13 @@ const gravatar=require('gravatar');;
 const jwt=require('jsonwebtoken');
 const router =express.Router();
 
+const validatRegisterIput= require('../../validation/register')
+
 router.post('/register',(req,res)=>{
+    const {errors, isValid} = validatRegisterIput(req.body);
+    if(isValid){
+        return res.sendStatus(400).json(errors);
+    }
     User.findOne({email:req.body.email}).then(user=>{
         if(user){
             res.status(404).json({user:"email already exist"})
@@ -58,10 +64,11 @@ router.post('/login',(req,res)=>{
         }
         bcrypt.compare(req.body.password,user.password).then(isMatch=>{
             if(isMatch){
-            const token=jwt.sign({email:user.email,name:user.name},"secret",{expiresIn:60000});
+            const token=jwt.sign({email:user.email,name:user.name,_id:user._id},"secret",{expiresIn:60000});
             res.json({
                 msg:"logged in",
                 token:token
+
             })
         }else{
             res.json({msg:"password missmatch"});

@@ -7,7 +7,7 @@ const app=express();
 const userRouter=require('./routes/api/users');
 const profileRouter=require('./routes/api/profile');
 const postRouter=require('./routes/api/posts')
-const port=process.env.PORT ||5000;
+const port=process.env.PORT ||4000;
 
 db_connect=mongoose.connect(db.dbURL,{
     useUnifiedTopology: true,
@@ -31,7 +31,7 @@ require('./config/passport')
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
 app.use('/users',userRouter);
-// app.use('/profile',profileRouter);
+app.use('/profile',profileRouter);
 app.use('/post',postRouter);
 
  app.listen(port,()=>{
