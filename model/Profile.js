@@ -2,8 +2,8 @@ const mongoose= require('mongoose');
 
 const ProfileSchema=mongoose.Schema({
     user:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'user'
+       type:String,
+       required:true
     },
     handle:{
         type:String,
@@ -90,7 +90,7 @@ const ProfileSchema=mongoose.Schema({
     }],
     date:{
         type:String,
-        default:Date.now
+        default:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Date.now
     }
 })
 
