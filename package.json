@@ -13,7 +13,7 @@
   "author": "Melkam Beyene",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.7",
+    "bcrypt": "^3.0.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.0",
@@ -25,6 +25,7 @@
     "passport-jwt": "^4.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "validator": "^12.0.0"
   }
 }
