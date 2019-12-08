@@ -6,6 +6,7 @@ import Footer from './components/layout/footer';
 import Login from './components/auth/login';
 import Register from './components/auth/register';
 import Landing from './components/layout/landing';
+import Profile from './components/auth/profile';
 import './App.css';
 
 
@@ -17,7 +18,8 @@ function App() {
        <Route exact path='/' component={Landing}></Route>
        <div className="container">
          <Route exact path='/register' component={Register}></Route>
-         <Route exact pathe='/login' component={Login}></Route>
+         <Route exact path='/login' component={Login}></Route>
+         <Route exact path='/profile' component={Profile}></Route>
          </div>  
        <Footer></Footer>
     </div>

@@ -19,7 +19,7 @@ router.get('/:id',verifyToken,(req,res)=>{
         console.log(authData.name);
         console.log(authData.email);
         console.log(req.params.id);
-        console.log
+        
         Profile.findOne({user:req.params.id}).then(profile=>{
            
                 if(profile.user===authData._id){
