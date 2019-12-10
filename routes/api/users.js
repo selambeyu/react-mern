@@ -6,13 +6,17 @@ const gravatar=require('gravatar');;
 const jwt=require('jsonwebtoken');
 const router =express.Router();
 
-const validatRegisterIput= require('../../validation/register')
+// const validatRegisterIput= require('../../validation/register')
+router.get('/test',(req,res)=>{
+    res.send("Api connecte with react client");
+})
+
 
 router.post('/register',(req,res)=>{
-    const {errors, isValid} = validatRegisterIput(req.body);
-    if(isValid){
-        return res.sendStatus(400).json(errors);
-    }
+    // const {errors, isValid} = validatRegisterIput(req.body);
+    // if(isValid){
+    //     return res.sendStatus(400).json(errors);
+    // }
     User.findOne({email:req.body.email}).then(user=>{
         if(user){
             res.status(404).json({user:"email already exist"})
@@ -36,7 +40,7 @@ router.post('/register',(req,res)=>{
                     newUser.password=hash;
                     newUser.save().then(newUser=>{
                         res.json({
-                            newUser:newUser,
+                            
                             message:"User Registered"
                         })
                     }).catch(err=>{

@@ -1,4 +1,5 @@
-import React,{Component} from 'react'
+import React,{Component} from 'react';
+import axios from 'axios';
 
 class Login extends Component{
     constructor(){
@@ -18,7 +19,10 @@ class Login extends Component{
         email:this.state.email,
         password:this.state.password
       }
-      console.log(account)
+      axios.post('http://localhost:8080/users/login',account)
+      .then(res=>console.log("successfully logged in"))
+      .catch(err=>console.log(err))
+     
     }
     onChange(e){
       this.setState({[e.target.name]:e.target.value});

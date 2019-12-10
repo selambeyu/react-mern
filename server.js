@@ -2,6 +2,7 @@ const express=require('express');
 const mongoose=require('mongoose');
 const bodyparser=require('body-parser');
 const passport=require('passport-jwt');
+const cors=require('cors');
 const db=require('./config/config')
 const app=express();
 const userRouter=require('./routes/api/users');
@@ -28,6 +29,7 @@ app.get('/',(req,res)=>{
 // passport config 
 require('./config/passport')
 
+app.use(cors());
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
 app.use('/users',userRouter);
@@ -36,4 +38,4 @@ app.use('/post',postRouter);
 
  app.listen(port,()=>{
      console.log(`server running on port ${port}`);
-}) 
+}); 
