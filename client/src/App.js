@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {Provider} from 'react-redux'
+// import {createStore, applyMiddleware} from 'redux'
 import store from'./store'
 // import logo from './logo.svg';
 import Navbar from './components/layout/Navbar';
@@ -20,6 +21,7 @@ function App() {
           <div className="App">
               <Navbar></Navbar>
                 <Route exact path='/' component={Landing}></Route>
+                <Route exact path='/deveconn' component={Landing}></Route>
                 <div className="container">
                   <Route exact path='/register' component={Register}></Route>
                   <Route exact path='/login' component={Login}></Route>

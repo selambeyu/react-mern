@@ -40,7 +40,6 @@ router.post('/register',(req,res)=>{
                     newUser.password=hash;
                     newUser.save().then(newUser=>{
                         res.json({
-                            
                             message:"User Registered"
                         })
                     }).catch(err=>{

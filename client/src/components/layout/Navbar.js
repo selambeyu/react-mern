@@ -6,7 +6,7 @@ import  {Link} from 'react-router-dom'
         return(
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
-        <a className="navbar-brand" href="landing.html">DevConnector</a>
+        <Link className="navbar-brand" to="/deveconn">DevConnector</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
             <span className="navbar-toggler-icon"></span>
         </button>
@@ -25,6 +25,9 @@ import  {Link} from 'react-router-dom'
           </li>
           <li className="nav-item">
             <Link className="nav-link" to='/login'>Login</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to='/logout'>Logout</Link>
           </li>
         </ul>
       </div>

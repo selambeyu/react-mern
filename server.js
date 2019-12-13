@@ -8,7 +8,7 @@ const app=express();
 const userRouter=require('./routes/api/users');
 const profileRouter=require('./routes/api/profile');
 const postRouter=require('./routes/api/posts')
-const port=process.env.PORT ||8080;
+const port=process.env.PORT ||4000;
 
 db_connect=mongoose.connect(db.dbURL,{
     useUnifiedTopology: true,
