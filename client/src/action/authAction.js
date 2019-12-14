@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {TEST_DISPATCH} from './types'
+import {GET_ERRORS} from './types'
 
 
 export const  registerUser= userData =>dispatch=>{
@@ -8,7 +8,7 @@ export const  registerUser= userData =>dispatch=>{
      .post('http://localhost:4000/users/register',userData)
      .then(res => console.log(res.data))
      .catch(err=>dispatch({
-         type: GET_ERROR,
-         payload: err.responce.data
+         type: GET_ERRORS,
+         payload: err.response.data
      }))
 }
