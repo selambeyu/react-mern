@@ -26,7 +26,7 @@ class Register extends Component{
 
 
 
-
+ 
     onChange(e){
         this.setState({[e.target.name]:e.target.value});
     }
@@ -42,7 +42,7 @@ class Register extends Component{
         this.props.registerUser(newUser,this.props.history);
 
         // console.log(newUser);
-       
+        
     }
 
     render(){
